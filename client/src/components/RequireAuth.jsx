@@ -7,10 +7,6 @@ const RequireAuth = () => {
   const { isAuthenticated } = useAuth();
   const location = useLocation();
 
-  useEffect(() => {
-    isAuthenticated();
-  }, [])
-
   return (
     isAuthenticated()
       ? <Outlet />

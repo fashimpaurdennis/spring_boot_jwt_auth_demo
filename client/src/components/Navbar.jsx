@@ -27,7 +27,7 @@ const Navbar = ({ isHome, isLogin }) => {
             </div>
             <div className="flex items-center justify-center sm:items-stretch sm:justify-start">
               <div className="flex gap-x-4">
-                {isAuthenticated() && <Link to="/dashboard" onClick={handleLogout} className="px-8 py-2 rounded-full text-md font-bold ease-in-out duration-500 bg-[#546A7B] text-[#172326] hover:bg-[#62929E] hover:text-[#FDFDFF]">Account</Link>}
+                {isAuthenticated() && <Link to="/dashboard" className="px-8 py-2 rounded-full text-md font-bold ease-in-out duration-500 bg-[#546A7B] text-[#172326] hover:bg-[#62929E] hover:text-[#FDFDFF]">Account</Link>}
                 {isAuthenticated()
                   ? <Link to="/" onClick={handleLogout} className="px-8 py-2 rounded-full text-md font-bold ease-in-out duration-500 bg-[#546A7B] text-[#172326] hover:bg-[#62929E] hover:text-[#FDFDFF]">Logout</Link>
                   : <Link to="/login" className="px-8 py-2 rounded-full text-md font-bold ease-in-out duration-500 bg-[#546A7B] text-[#172326] hover:bg-[#62929E] hover:text-[#FDFDFF]">Login</Link>

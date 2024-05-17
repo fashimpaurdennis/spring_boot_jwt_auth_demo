@@ -4,7 +4,7 @@ import Home from './components/Home'
 import Login from './components/Login'
 import Register from './components/Register'
 import RequireAuth from './components/RequireAuth'
-import Dashboard from './components/Dashboard'
+import Dashboard from './components/dashboard/Dashboard'
 
 function App() {
   return (
