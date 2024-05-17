@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-GalleryGavelApplication<gavelGallery>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.fashimpaurforgeworks.galleryGavel.GalleryGavelApplication",
+            "projectName": "gavelGallery",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

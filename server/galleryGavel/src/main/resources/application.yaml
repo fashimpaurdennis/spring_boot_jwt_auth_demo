@@ -1,0 +1,17 @@
+spring:
+    config:
+        import: optional:secrets.yaml
+    application:
+        name: oauth2Test
+    jpa:
+        hibernate:
+            ddl-auto: update
+        properties:
+            jakarta:
+                persistence:
+                    validation:
+                        mode: none
+    mvc:
+        hiddenmethod:
+            filter:
+                enabled: true

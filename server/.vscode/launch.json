@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-GalleryGavelApplication<oauth2Test>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.fashimpaurforgeworks.galleryGavel.GalleryGavelApplication",
+            "projectName": "oauth2Test",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
