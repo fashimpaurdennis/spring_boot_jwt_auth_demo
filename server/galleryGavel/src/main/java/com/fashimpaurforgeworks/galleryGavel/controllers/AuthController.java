@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.fashimpaurforgeworks.galleryGavel.dtos.ReqRes;
+import com.fashimpaurforgeworks.galleryGavel.dtos.UserReqRes;
 import com.fashimpaurforgeworks.galleryGavel.services.AuthService;
 
 import jakarta.validation.Valid;
@@ -22,17 +22,17 @@ public class AuthController {
     private AuthService authService;
 
     @PostMapping("/register")
-    public ResponseEntity<ReqRes> register(@Valid @RequestBody ReqRes registerReq, BindingResult result) {
+    public ResponseEntity<UserReqRes> register(@Valid @RequestBody UserReqRes registerReq, BindingResult result) {
         return ResponseEntity.ok(authService.register(registerReq, result));
     }
 
     @PostMapping("/login")
-    public ResponseEntity<ReqRes> login(@RequestBody ReqRes loginReq) {
+    public ResponseEntity<UserReqRes> login(@RequestBody UserReqRes loginReq) {
         return ResponseEntity.ok(authService.login(loginReq));
     }
 
     @PostMapping("/refresh")
-    public ResponseEntity<ReqRes> refreshToken(@RequestBody ReqRes refreshReq) {
+    public ResponseEntity<UserReqRes> refreshToken(@RequestBody UserReqRes refreshReq) {
         return ResponseEntity.ok(authService.refreshToken(refreshReq));
     }
 

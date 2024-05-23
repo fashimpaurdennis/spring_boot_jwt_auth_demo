@@ -5,8 +5,9 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.fashimpaurforgeworks.galleryGavel.dtos.ReqRes;
+import com.fashimpaurforgeworks.galleryGavel.dtos.UserReqRes;
 import com.fashimpaurforgeworks.galleryGavel.entities.User;
+import com.fashimpaurforgeworks.galleryGavel.mappers.UserMapper;
 import com.fashimpaurforgeworks.galleryGavel.repositories.UserRepo;
 
 @Service
@@ -15,15 +16,24 @@ public class UserService {
     @Autowired
     private UserRepo userRepo;
 
-    public ReqRes getUser(String email) {
-        ReqRes res = new ReqRes();
+    @Autowired
+    private UserMapper userMapper;
+
+    public User getUser(String email) {
+        Optional<User> optionalUser = userRepo.findByEmail(email);
+        User foundUser = optionalUser.get();
+        return foundUser;
+    }
+
+    public UserReqRes getUserRes(String email) {
+        UserReqRes res = new UserReqRes();
 
         try {
             Optional<User> optionalUser = userRepo.findByEmail(email);
 
             if (optionalUser.isPresent()) {
                 User foundUser = optionalUser.get();
-                res.setUser(foundUser);
+                res = userMapper.convertToDto(foundUser);
                 res.setStatusCode(200);
                 res.setMessage("User successfully found.");
             } else {

@@ -9,7 +9,7 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.stereotype.Service;
 import org.springframework.validation.BindingResult;
 
-import com.fashimpaurforgeworks.galleryGavel.dtos.ReqRes;
+import com.fashimpaurforgeworks.galleryGavel.dtos.UserReqRes;
 import com.fashimpaurforgeworks.galleryGavel.entities.User;
 import com.fashimpaurforgeworks.galleryGavel.mappers.UserMapper;
 import com.fashimpaurforgeworks.galleryGavel.repositories.UserRepo;
@@ -29,18 +29,18 @@ public class AuthService {
     @Autowired
     private AuthenticationManager authenticationManager;
 
-    public ReqRes register(ReqRes registerReq, BindingResult result) {
-        ReqRes res = new ReqRes();
+    public UserReqRes register(UserReqRes registerReq, BindingResult result) {
+        UserReqRes res = new UserReqRes();
 
         Optional<User> optionalUser = userRepo.findByEmail(registerReq.getEmail());
         if (optionalUser.isPresent()) {
             result.rejectValue("email", "Unique", "Email is already in use.");
         }
-        
+
         if (!registerReq.getPassword().equals(registerReq.getConfirm())) {
             result.rejectValue("confirm", "Matches", "Password and Confirm Password must match.");
         }
-        
+
         if (result.hasErrors()) {
             res.setStatusCode(500);
             res.setError(result.getAllErrors().toString());
@@ -63,8 +63,8 @@ public class AuthService {
         return res;
     }
 
-    public ReqRes login(ReqRes loginReq) {
-        ReqRes res = new ReqRes();
+    public UserReqRes login(UserReqRes loginReq) {
+        UserReqRes res = new UserReqRes();
 
         try {
             authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(loginReq.getEmail(), loginReq.getPassword()));
@@ -86,8 +86,8 @@ public class AuthService {
         return res;
     }
 
-    public ReqRes refreshToken(ReqRes refreshReq) {
-        ReqRes res = new ReqRes();
+    public UserReqRes refreshToken(UserReqRes refreshReq) {
+        UserReqRes res = new UserReqRes();
 
         try {
             String email = jwtUtils.extractUsername(refreshReq.getToken());

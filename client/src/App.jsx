@@ -5,6 +5,7 @@ import Login from './components/Login'
 import Register from './components/Register'
 import RequireAuth from './components/RequireAuth'
 import Dashboard from './components/dashboard/Dashboard'
+import ItemForm from './components/dashboard/ItemForm'
 
 function App() {
   return (
@@ -14,9 +15,9 @@ function App() {
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />
         <Route element={<RequireAuth />}>
-          <Route path="/dashboard" element={<Dashboard />} />
-          {/* Create Post */}
-          {/* View Post */}
+          <Route path="dashboard" element={<Dashboard />} />
+          <Route path="items/new" element={<ItemForm />} />
+          {/* Create Auction */}
         </Route>
       </Route>
     </Routes>

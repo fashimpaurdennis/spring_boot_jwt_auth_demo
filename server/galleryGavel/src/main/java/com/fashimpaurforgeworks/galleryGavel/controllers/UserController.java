@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.fashimpaurforgeworks.galleryGavel.dtos.ReqRes;
+import com.fashimpaurforgeworks.galleryGavel.dtos.UserReqRes;
 import com.fashimpaurforgeworks.galleryGavel.services.UserService;
 
 @RestController
@@ -19,11 +19,11 @@ public class UserController {
     private UserService userService;
 
     @GetMapping("/info")
-    public ResponseEntity<ReqRes> getUserInfo() {
+    public ResponseEntity<UserReqRes> getUserInfo() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 
         String email = authentication.getName();
-        ReqRes res = userService.getUser(email);
+        UserReqRes res = userService.getUserRes(email);
 
         return ResponseEntity.status(res.getStatusCode()).body(res);
     }
