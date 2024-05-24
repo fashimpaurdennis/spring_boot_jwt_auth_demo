@@ -9,7 +9,7 @@ spring:
     config:
         import: optional:secrets.yaml
     application:
-        name: oauth2Test
+        name: gallery_gavel_jwt_demo
     jpa:
         hibernate:
             ddl-auto: update
