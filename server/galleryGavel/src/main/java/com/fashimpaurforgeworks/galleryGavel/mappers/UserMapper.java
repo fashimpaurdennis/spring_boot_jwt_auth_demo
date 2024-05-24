@@ -39,7 +39,6 @@ public class UserMapper {
         res.setCity(user.getCity());
         res.setState(user.getState());
         res.setZipCode(user.getZipCode());
-        res.setItems(user.getItems());
 
         return res;
     }

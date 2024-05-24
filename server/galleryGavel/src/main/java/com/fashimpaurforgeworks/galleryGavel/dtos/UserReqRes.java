@@ -2,7 +2,6 @@ package com.fashimpaurforgeworks.galleryGavel.dtos;
 
 import java.util.List;
 
-import com.fashimpaurforgeworks.galleryGavel.entities.Item;
 import com.fashimpaurforgeworks.galleryGavel.entities.User;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -30,7 +29,6 @@ public class UserReqRes {
     private String password;
     private String confirm;
     private User user;
-    private List<Item> items;
     private List<User> userList;
 
 }

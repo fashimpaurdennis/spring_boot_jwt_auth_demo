@@ -23,6 +23,7 @@ const Home = () => {
         </div>
       </div>
       <div className="ml-64 p-5 flex flex-col gap-10">
+        <h2 className="text-2xl font-bold text-yellow-500 text-center">Only visible to logged users</h2>
         <form onSubmit={handleSubmit}>
           <div className="flex items-center px-4 py-2 rounded-full outline outline-4 outline-[#62929E]">
             <img className="h-5 mr-4" src="./src/assets/search-icon.png"></img>
