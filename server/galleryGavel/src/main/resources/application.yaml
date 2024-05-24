@@ -1,3 +1,10 @@
+# This application requires a secrets.yaml file formatted as follows.
+#   spring:
+#       datasource:
+#           url: {URL for a mysql database}
+#           username: {username for indicated database}
+#           password: {password for indicated database}
+
 spring:
     config:
         import: optional:secrets.yaml
