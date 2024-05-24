@@ -4,4 +4,4 @@ This project was made out of the desire to teach myself user authentication and 
 
 # Acknowledgements
 
-I want to give a big shoutout to Coding Dojo and Dennis Iluma over on his YouTube channel: <a href="https://www.youtube.com/@PhegonDev">PhegonDev</a>. The knowledge I garned at Coding Dojo made a strong base for me to build on with this project. PhegonDev helped provide fantastic examples of core concepts explored in the Spring Security documentation.
+I want to give a big shoutout to Coding Dojo and Dennis Iluma over on his YouTube channel: <a href="https://www.youtube.com/@PhegonDev">PhegonDev</a>. The knowledge I garnered at Coding Dojo made a strong base for me to build on with this project. PhegonDev helped provide fantastic examples of core concepts explored in the Spring Security documentation.
