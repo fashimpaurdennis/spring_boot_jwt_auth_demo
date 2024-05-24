@@ -90,7 +90,7 @@ public class AuthService {
         UserReqRes res = new UserReqRes();
 
         try {
-            String email = jwtUtils.extractUsername(refreshReq.getToken());
+            String email = jwtUtils.getUsername(refreshReq.getToken());
             User user = userRepo.findByEmail(email).orElseThrow();
 
             if (jwtUtils.isTokenValid(refreshReq.getToken(), user)) {
