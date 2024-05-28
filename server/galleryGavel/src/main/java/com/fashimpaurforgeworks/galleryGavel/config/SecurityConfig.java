@@ -29,6 +29,14 @@ public class SecurityConfig {
     @Autowired
     private JwtAuthFilter jwtAuthFilter;
 
+    /**
+     * Security filter chain configuring CSRF, CORS, request authorization
+     * based on user role, session management, and adding {@link #jwtAuthFilter}
+     * before all filters.
+     * 
+     * @param httpSecurity http security configuration
+     * @return httpSecurity object
+     */
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
         httpSecurity.csrf(AbstractHttpConfigurer::disable);
@@ -47,6 +55,12 @@ public class SecurityConfig {
         return httpSecurity.build();
     }
 
+    /**
+     * Customizes DAO Auth Provider to implement {@link #customUserDetailsService}
+     * and a specific {@link #passwordEncoder()}.
+     * 
+     * @return DaoAuthenticationProvider
+     */
     @Bean
     public AuthenticationProvider authenticationProvider() {
         DaoAuthenticationProvider provider = new DaoAuthenticationProvider();
@@ -55,6 +69,11 @@ public class SecurityConfig {
         return provider;
     }
 
+    /**
+     * Set preferred password encoding function to BCrypt strong hashing.
+     * 
+     * @return BCryptPasswordEncoder object
+     */
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();

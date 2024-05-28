@@ -1,3 +1,5 @@
+// CORS configuration for dev. Will be removed for prod.
+
 package com.fashimpaurforgeworks.galleryGavel.config;
 
 import org.springframework.context.annotation.Bean;
