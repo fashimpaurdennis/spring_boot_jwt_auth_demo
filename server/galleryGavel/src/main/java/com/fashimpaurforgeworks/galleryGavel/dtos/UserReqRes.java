@@ -1,3 +1,6 @@
+/*
+ * Simple request and response DTO for user data.
+ */
 package com.fashimpaurforgeworks.galleryGavel.dtos;
 
 import java.util.List;
