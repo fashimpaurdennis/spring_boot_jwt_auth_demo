@@ -14,6 +14,7 @@ public class CorsConfig {
     public WebMvcConfigurer webMvcConfigurer() {
         return new WebMvcConfigurer() {
 
+            // Needed override for Cors Mapping
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
